@@ -6,6 +6,7 @@ public class Book {
 	private double price;
 	private boolean isInStock;
 	private int quantity;
+	private String sku;
 	
 	public Book()
 	{
@@ -15,9 +16,10 @@ public class Book {
 		this.price=0.0;
 		this.isInStock=false;
 		this.quantity=0;
+		this.sku="";
 	}
 	
-	public Book(String title, String author, String description, double price, boolean isInStock, int quantity)
+	public Book(String title, String author, String description, double price, boolean isInStock, int quantity, String sku)
 	{
 		this.title=title;
 		this.author=author;
@@ -25,7 +27,15 @@ public class Book {
 		this.price=price;
 		this.isInStock=isInStock;
 		this.quantity=quantity;
+		this.sku=sku;
+	}
 
+	public String getSku() {
+		return sku;
+	}
+
+	public void setSku(String sku) {
+		this.sku = sku;
 	}
 
 	public String getTitle() {
@@ -93,6 +103,12 @@ public class Book {
 	public static double totalPrice(int quantity, double price)
 	{
 		return quantity*price;
+	}
+	
+	public String getDisplayText()
+	{
+		String text = "Book title: "+this.title+"\nBook author: "+this.author+"\nBook description: "+this.description;
+		return text;
 	}
 
 }
