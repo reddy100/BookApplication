@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class BookApp {
 
@@ -14,8 +15,12 @@ public class BookApp {
 		Book book4 = new Book("Prelandra", "C.S.Lewis", "It is the second book in the Space Trilogy of C. S. Lewis, set in the Field of Arbol. It was first published in 1943.", 20.0, true, 1); 
 		Book book5 = new Book("Nineteen Eighty-four", "George Orwell", "It is a dystopian novel by English author George Orwell published in 1949.[1][2] The novel is set in Airstrip One (formerly known as Great Britain), a province of the superstate Oceania in a world of perpetual war, omnipresent government surveillance and public manipulation, dictated by a political system euphemistically named English Socialism (or Ingsoc in the government's invented language, Newspeak) under the control of a privileged elite of the Inner Party, that persecutes individualism and independent thinking as \"thoughtcrime.\" ", 20.0, true, 10); 
 		*/
-		Book book = BookDB.getBook("lotr");
-		
+		print("Please enter the sku:");
+		Scanner sc = new Scanner(System.in);
+		String input = sc.next();
+		Book book = BookDB.getBook(input);
+		print(book.getAuthor());
+		print(book.getTitle());
 	}
 
 	public static void print(String a)
